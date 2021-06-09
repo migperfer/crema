@@ -18,7 +18,7 @@ class ChordModel(CremaModel):
     def __init__(self):
         self._instantiate('chord')
 
-    def predict(self, filename=None, y=None, sr=None, outputs=None):
+    def predict(self, filename=None, y=None, sr=None, outputs=None, outputfile=None):
         '''Chord prediction
 
         Parameters
@@ -74,6 +74,9 @@ class ChordModel(CremaModel):
                                               outputs=outputs)
 
         bass_pred = outputs['chord_bass']
+
+        if outputfile is not None:
+            np.save(outputfile, outputs['chord_pitch'])
 
         # Handle inversion estimation
         for obs in ann.pop_data():

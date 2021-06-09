@@ -14,7 +14,7 @@ __MODELS__ = []
 __all__ = ['analyze', 'main']
 
 
-def analyze(filename=None, y=None, sr=None):
+def analyze(filename=None, y=None, sr=None, outputfile=None):
     '''Analyze a recording for all tasks.
 
     Parameters
@@ -62,7 +62,7 @@ def analyze(filename=None, y=None, sr=None):
                                                       filename=filename)
 
     for model in __MODELS__:
-        jam.annotations.append(model.predict(filename=filename, y=y, sr=sr))
+        jam.annotations.append(model.predict(filename=filename, y=y, sr=sr, outputfile=outputfile))
 
     return jam
 
