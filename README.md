@@ -30,11 +30,11 @@ From within python:
 ```python
 from crema.analyze import analyze
 
-jam = analyze(filename='/path/to/file.mp3')
+jam = analyze(filename='/path/to/file.mp3', outputfile='optional/output/of/chroma/as/file.npy')
 ```
 
 or if you have an audio buffer in memory, librosa-style:
 
 ```python
-jam = analyze(y=y, sr=sr)
+jam = analyze(y=y, sr=sr, outputfile='optional/output/of/chroma/as/file.npy')
 ```
