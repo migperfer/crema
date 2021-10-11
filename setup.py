@@ -34,7 +34,7 @@ setup(
                       'jams>=0.3',
                       'scikit-learn>=0.18',
                       'keras>=2.0',
-                      'tensorflow>=1.0',
+                      'tensorflow~=2.6.0',
                       'mir_eval>=0.5',
                       'pumpp>=0.4',
                       'h5py>=2.7'],
